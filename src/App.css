@@ -1,0 +1,438 @@
+.login-page {
+  min-height: 100vh;
+  background: #080b08;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #080b10;
+  color: white;
+}
+
+.login-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 40%, #14213a 0%, transparent 45%),
+    #080b10;
+  overflow: hidden;
+}
+
+/* Navbar */
+
+.navbar {
+  height: 85px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #4d86f0;
+}
+
+.navbar a {
+  color: #a4afc0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #4d86f0;
+}
+
+/* Login Container */
+
+.login-container {
+  min-height: calc(100vh - 85px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* Login Card */
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+  background: rgba(18, 25, 38, 0.85);
+  border: 1px solid #26364f;
+  border-radius: 20px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon */
+
+.login-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(77, 134, 240, 0.15);
+  border: 1px solid rgba(77, 134, 240, 0.4);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4d86f0;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+/* Heading */
+
+.welcome-text {
+  color: #4d86f0;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.login-card h1 {
+  font-size: 30px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.login-card h1 span {
+  color: #4d86f0;
+}
+
+.subtitle {
+  color: #8995a8;
+  font-size: 13px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Inputs */
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: #d4dce8;
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 49px;
+  padding: 0 15px;
+  background: #0c121d;
+  border: 1px solid #29364a;
+  border-radius: 9px;
+  outline: none;
+  color: white;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #647187;
+}
+
+.input-group input:focus {
+  border-color: #4d86f0;
+  box-shadow: 0 0 0 3px rgba(77, 134, 240, 0.12);
+}
+
+/* Form Options */
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0 25px;
+  font-size: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #9ba8ba;
+}
+
+.remember input {
+  accent-color: #4d86f0;
+}
+
+.form-options a,
+.signup-text a {
+  color: #4d86f0;
+  text-decoration: none;
+}
+
+.form-options a:hover,
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+
+.login-btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 9px;
+  background: #4d86f0;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.login-btn:hover {
+  background: #326cdb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(77, 134, 240, 0.25);
+}
+
+/* Messages */
+
+.error {
+  color: #ff7777;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.success {
+  color: #4ade80;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+/* Divider */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0;
+  color: #647187;
+  font-size: 11px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #29364a;
+}
+
+/* Signup */
+
+.signup-text {
+  text-align: center;
+  color: #8995a8;
+  font-size: 13px;
+}
+
+.signup-text a {
+  font-weight: 600;
+}
+
+/* Footer */
+
+.footer-text {
+  color: #596579;
+  font-size: 11px;
+  margin-top: 30px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 6%;
+    height: 70px;
+  }
+
+  .login-container {
+    min-height: calc(100vh - 70px);
+    padding: 20px 15px;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+  }
+
+  .login-card h1 {
+    font-size: 26px;
+  }
+}
+
+/* Animated Background */
+
+.animated-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.22;
+  animation: float 12s ease-in-out infinite alternate;
+}
+
+.orb-one {
+  width: 350px;
+  height: 350px;
+  background: #39FF14;
+  top: -100px;
+  left: -100px;
+}
+
+.orb-two {
+  width: 300px;
+  height: 300px;
+  background: #00ff88;
+  bottom: -100px;
+  right: -80px;
+  animation-delay: 2s;
+}
+
+.orb-three {
+  width: 200px;
+  height: 200px;
+  background: #39FF14;
+  top: 40%;
+  right: 20%;
+  opacity: 0.10;
+  animation-delay: 4s;
+}
+
+/* Orb Animation */
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(80px, 50px) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-40px, 100px) scale(0.9);
+  }
+}
+
+/* Particles */
+
+.particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #39FF14;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #39FF14;
+  animation: particleFloat 8s linear infinite;
+}
+
+.particles span:nth-child(1) {
+  left: 10%;
+  top: 80%;
+}
+
+.particles span:nth-child(2) {
+  left: 25%;
+  top: 30%;
+  animation-delay: 2s;
+}
+
+.particles span:nth-child(3) {
+  left: 40%;
+  top: 90%;
+  animation-delay: 1s;
+}
+
+.particles span:nth-child(4) {
+  left: 60%;
+  top: 20%;
+  animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+  left: 75%;
+  top: 70%;
+  animation-delay: 1.5s;
+}
+
+.particles span:nth-child(6) {
+  left: 90%;
+  top: 40%;
+  animation-delay: 4s;
+}
+
+.particles span:nth-child(7) {
+  left: 50%;
+  top: 50%;
+  animation-delay: 2.5s;
+}
+
+.particles span:nth-child(8) {
+  left: 15%;
+  top: 15%;
+  animation-delay: 5s;
+}
+
+/* Particle Movement */
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-orb,
+  .particles span {
+    animation: none;
+  }
+}
