@@ -7,22 +7,34 @@ function App() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handlesubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setError("");
 
-    if (email === "") {
+    const trimmedEmail = email.trim();
+
+    if (trimmedEmail === "") {
       setError("Please enter your email");
+      return;
     }
-    else if (password === "") {
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    if (password === "") {
       setError("Please enter your password");
+      return;
     }
-    else if (password.length !== 6) {
-      setError("Password must be exactly 6 characters");
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
     }
-    else {
-      setError("Login Successful!");
-    }
+
+    setError("Login Successful!");
   }
 
   return (
@@ -54,7 +66,7 @@ function App() {
 
       <nav className="navbar">
         <h2 className="logo">R<span>.</span></h2>
-        <a href="/">Back to Home</a>
+        <a href="#home">Back to Home</a>
       </nav>
 
 
@@ -81,27 +93,31 @@ function App() {
 
           {/* Login Form */}
 
-          <form onSubmit={handlesubmit}>
+          <form onSubmit={handleSubmit}>
 
             <div className="input-group">
-              <label>Email Address</label>
+              <label htmlFor="email">Email Address</label>
 
               <input
+                id="email"
                 type="email"
                 value={email}
                 placeholder="name@example.com"
+                autoComplete="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
 
             <div className="input-group">
-              <label>Password</label>
+              <label htmlFor="password">Password</label>
 
               <input
+                id="password"
                 type="password"
                 value={password}
                 placeholder="Enter your password"
+                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -109,12 +125,12 @@ function App() {
 
             <div className="form-options">
 
-              <label className="remember">
-                <input type="checkbox" />
+              <label className="remember" htmlFor="remember">
+                <input id="remember" type="checkbox" />
                 Remember me
               </label>
 
-              <a href="#">Forgot password?</a>
+              <a href="#forgot">Forgot password?</a>
 
             </div>
 
@@ -140,7 +156,7 @@ function App() {
 
           <p className="signup-text">
             Don't have an account?
-            <a href="#"> Sign up</a>
+            <a href="#signup"> Sign up</a>
           </p>
 
         </div>

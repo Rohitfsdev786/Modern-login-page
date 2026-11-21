@@ -1,11 +1,3 @@
-.login-page {
-  min-height: 100vh;
-  background: #080b08;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +5,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: #080b10;
   color: white;
 }
@@ -23,7 +15,9 @@ body {
   background:
     radial-gradient(circle at 50% 40%, #14213a 0%, transparent 45%),
     #080b10;
+  position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 /* Navbar */
